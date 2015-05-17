@@ -1,0 +1,21 @@
+\\BHARATH\BillingApplication\BillingApplication.WebService\bin\BillingApplication.WebService.dll
+\\BHARATH\BillingApplication\BillingApplication.WebService\bin\BillingApplication.WebService.pdb
+\\BHARATH\BillingApplication\BillingApplication.WebService\obj\Debug\ResolveAssemblyReference.cache
+\\BHARATH\BillingApplication\BillingApplication.WebService\obj\Debug\BillingApplication.WebService.dll
+\\BHARATH\BillingApplication\BillingApplication.WebService\obj\Debug\BillingApplication.WebService.pdb
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WebService\bin\BillingApplication.WebService.dll
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WebService\bin\BillingApplication.WebService.pdb
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WebService\obj\Debug\ResolveAssemblyReference.cache
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WebService\obj\Debug\BillingApplication.WebService.dll
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WebService\obj\Debug\BillingApplication.WebService.pdb
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WebService\bin\BillingApplication.Core.dll
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WebService\bin\BillingApplication.Core.pdb
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WebService\bin\itextsharp.dll
+F:\BillingApplication\BillingApplication\BillingApplication.WebService\bin\BillingApplication.WebService.dll
+F:\BillingApplication\BillingApplication\BillingApplication.WebService\bin\BillingApplication.WebService.pdb
+F:\BillingApplication\BillingApplication\BillingApplication.WebService\bin\BillingApplication.Core.dll
+F:\BillingApplication\BillingApplication\BillingApplication.WebService\bin\itextsharp.dll
+F:\BillingApplication\BillingApplication\BillingApplication.WebService\bin\BillingApplication.Core.pdb
+F:\BillingApplication\BillingApplication\BillingApplication.WebService\obj\Debug\ResolveAssemblyReference.cache
+F:\BillingApplication\BillingApplication\BillingApplication.WebService\obj\Debug\BillingApplication.WebService.dll
+F:\BillingApplication\BillingApplication\BillingApplication.WebService\obj\Debug\BillingApplication.WebService.pdb

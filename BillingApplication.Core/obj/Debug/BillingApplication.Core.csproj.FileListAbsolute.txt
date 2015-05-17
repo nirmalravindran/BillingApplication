@@ -1,0 +1,13 @@
+\\BHARATH\BillingApplication\BillingApplication.Core\obj\Debug\ResolveAssemblyReference.cache
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.Core\obj\Debug\ResolveAssemblyReference.cache
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.Core\bin\BillingApplication.Core.dll
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.Core\bin\BillingApplication.Core.pdb
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.Core\obj\Debug\BillingApplication.Core.dll
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.Core\obj\Debug\BillingApplication.Core.pdb
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.Core\bin\itextsharp.dll
+F:\BillingApplication\BillingApplication\BillingApplication.Core\bin\BillingApplication.Core.dll
+F:\BillingApplication\BillingApplication\BillingApplication.Core\bin\BillingApplication.Core.pdb
+F:\BillingApplication\BillingApplication\BillingApplication.Core\bin\itextsharp.dll
+F:\BillingApplication\BillingApplication\BillingApplication.Core\obj\Debug\ResolveAssemblyReference.cache
+F:\BillingApplication\BillingApplication\BillingApplication.Core\obj\Debug\BillingApplication.Core.dll
+F:\BillingApplication\BillingApplication\BillingApplication.Core\obj\Debug\BillingApplication.Core.pdb

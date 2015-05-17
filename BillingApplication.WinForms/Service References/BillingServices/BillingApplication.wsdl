@@ -1,0 +1,1428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetProducts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductsResult" type="tns:ArrayOfProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Product">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryKey" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DimensionType" type="tns:DimensionType" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxClass" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DimensionType">
+        <s:restriction base="s:string">
+          <s:enumeration value="LITRES" />
+          <s:enumeration value="NOS" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetCustomers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomersResult" type="tns:ArrayOfCustomer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCustomer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryKey" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MobileNumber" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCashiers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCashiersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCashiersResult" type="tns:ArrayOfCashier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCashier">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Cashier" nillable="true" type="tns:Cashier" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cashier">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryKey" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCurrentCashiers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentCashiersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentCashiersResult" type="tns:ArrayOfCashier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bill" type="tns:Bill" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Bill">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryKey" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Number" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Odometer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Products" type="tns:ArrayOfBillItem" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMSStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cashier" type="tns:Cashier" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBillItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BillItem" nillable="true" type="tns:BillItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BillItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryKey" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ForeignKey" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Product" type="tns:Product" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveBillResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBillNumber">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBillNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBillNumberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bill" type="tns:Bill" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMStoDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMStoDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMStoDealerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSMSStatusForBill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bill" type="tns:Bill" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSMSStatusForBillResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SavePump">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pump" type="tns:Pump" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Pump">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryKey" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InitialReading" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentReading" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cashier" type="tns:Cashier" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdated" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PumpShiftDetails" type="tns:ArrayOfPumpShiftDetails" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsReadingIncremental" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPumpShiftDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PumpShiftDetails" nillable="true" type="tns:PumpShiftDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PumpShiftDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryKey" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pump" type="tns:Pump" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OpeningReading" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClosingReading" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Testing" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sales" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cashier" type="tns:Cashier" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShiftComplete" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SavePumpResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SavePumps">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pumps" type="tns:ArrayOfPump" />
+            <s:element minOccurs="1" maxOccurs="1" name="leavingCashier" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPump">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pump" nillable="true" type="tns:Pump" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SavePumpsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPumpsHandledByEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cashierId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPumpsHandledByEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPumpsHandledByEmployeeResult" type="tns:ArrayOfPump" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveShift">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pumpShiftDetails" type="tns:PumpShiftDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveShiftResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeeBills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cashierId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="shiftStartTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeBillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeBillsResult" type="tns:ArrayOfBill" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBill">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Bill" nillable="true" type="tns:Bill" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateShiftCloseAndGenerateReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pumps" type="tns:ArrayOfPump" />
+            <s:element minOccurs="0" maxOccurs="1" name="bills" type="tns:ArrayOfBill" />
+            <s:element minOccurs="1" maxOccurs="1" name="cashPaidByEmployee" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="expenses" type="tns:ArrayOfExpenses" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfExpenses">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Expenses" nillable="true" type="tns:Expenses" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Expenses">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateShiftCloseAndGenerateReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateShiftCloseAndGenerateReportResult" type="tns:Report" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Report">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddProducts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProductsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateBillWithCurrentCashier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cashierId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="billNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBillWithCurrentCashierResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveCurrentCashierFromBill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="billNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCurrentCashierFromBillResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllProducts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllProductsResult" type="tns:ArrayOfProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePriceForProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePriceForProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SaveCashReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cashReceipt" type="tns:CashReceipt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CashReceipt">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryKey" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CashierID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveCashReceiptResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeeCashReceipts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cashierId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="shiftStartTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeCashReceiptsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeCashReceiptsResult" type="tns:ArrayOfCashReceipt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCashReceipt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CashReceipt" nillable="true" type="tns:CashReceipt" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DoesBillNumberExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="billNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoesBillNumberExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DoesBillNumberExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTankableProducts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTankableProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTankableProductsResult" type="tns:ArrayOfProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTanksForProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTanksForProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTanksForProductResult" type="tns:ArrayOfTank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTank">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tank" nillable="true" type="tns:Tank" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tank">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryKey" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capacity" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Receipt" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sales" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreviousVolume" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentVolume" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Difference" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Dip" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WaterDip" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Product" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="DailyDipPrimaryKey" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveProductReceived">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productReceived" type="tns:ProductReceived" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProductReceived">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryKey" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tank" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveProductReceivedResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllTanks">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllTanksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllTanksResult" type="tns:ArrayOfTank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreviousVolumeForTanks">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPreviousVolumeForTanksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPreviousVolumeForTanksResult" type="tns:ArrayOfTank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesForTanks">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSalesForTanksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSalesForTanksResult" type="tns:ArrayOfTank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReceiptsForTanks">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetReceiptsForTanksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReceiptsForTanksResult" type="tns:ArrayOfTank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDailyDip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tank" type="tns:Tank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDailyDipResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomers" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCashiersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCashiers" />
+  </wsdl:message>
+  <wsdl:message name="GetCashiersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCashiersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentCashiersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentCashiers" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentCashiersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentCashiersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveBillSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveBill" />
+  </wsdl:message>
+  <wsdl:message name="SaveBillSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBillNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetBillNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBillNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMStoDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMStoDealer" />
+  </wsdl:message>
+  <wsdl:message name="SendSMStoDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMStoDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSMSStatusForBillSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSMSStatusForBill" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSMSStatusForBillSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSMSStatusForBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePumpSoapIn">
+    <wsdl:part name="parameters" element="tns:SavePump" />
+  </wsdl:message>
+  <wsdl:message name="SavePumpSoapOut">
+    <wsdl:part name="parameters" element="tns:SavePumpResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePumpsSoapIn">
+    <wsdl:part name="parameters" element="tns:SavePumps" />
+  </wsdl:message>
+  <wsdl:message name="SavePumpsSoapOut">
+    <wsdl:part name="parameters" element="tns:SavePumpsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPumpsHandledByEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPumpsHandledByEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetPumpsHandledByEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPumpsHandledByEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveShiftSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveShift" />
+  </wsdl:message>
+  <wsdl:message name="SaveShiftSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveShiftResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeBillsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeBills" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeBillsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeBillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShiftCloseAndGenerateReportSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateShiftCloseAndGenerateReport" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShiftCloseAndGenerateReportSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateShiftCloseAndGenerateReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProducts" />
+  </wsdl:message>
+  <wsdl:message name="AddProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBillWithCurrentCashierSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBillWithCurrentCashier" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBillWithCurrentCashierSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBillWithCurrentCashierResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCurrentCashierFromBillSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveCurrentCashierFromBill" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCurrentCashierFromBillSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveCurrentCashierFromBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePriceForProductSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePriceForProduct" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePriceForProductSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePriceForProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveCashReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveCashReceipt" />
+  </wsdl:message>
+  <wsdl:message name="SaveCashReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveCashReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeCashReceiptsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeCashReceipts" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeCashReceiptsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeCashReceiptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoesBillNumberExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:DoesBillNumberExists" />
+  </wsdl:message>
+  <wsdl:message name="DoesBillNumberExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:DoesBillNumberExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTankableProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTankableProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetTankableProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTankableProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTanksForProductSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTanksForProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetTanksForProductSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTanksForProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveProductReceivedSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveProductReceived" />
+  </wsdl:message>
+  <wsdl:message name="SaveProductReceivedSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveProductReceivedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTanksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllTanks" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTanksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllTanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPreviousVolumeForTanksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPreviousVolumeForTanks" />
+  </wsdl:message>
+  <wsdl:message name="GetPreviousVolumeForTanksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPreviousVolumeForTanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesForTanksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSalesForTanks" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesForTanksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSalesForTanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptsForTanksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReceiptsForTanks" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptsForTanksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReceiptsForTanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDailyDipSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveDailyDip" />
+  </wsdl:message>
+  <wsdl:message name="SaveDailyDipSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDailyDipResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BillingApplicationSoap">
+    <wsdl:operation name="GetProducts">
+      <wsdl:input message="tns:GetProductsSoapIn" />
+      <wsdl:output message="tns:GetProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <wsdl:input message="tns:GetCustomersSoapIn" />
+      <wsdl:output message="tns:GetCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCashiers">
+      <wsdl:input message="tns:GetCashiersSoapIn" />
+      <wsdl:output message="tns:GetCashiersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentCashiers">
+      <wsdl:input message="tns:GetCurrentCashiersSoapIn" />
+      <wsdl:output message="tns:GetCurrentCashiersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBill">
+      <wsdl:input message="tns:SaveBillSoapIn" />
+      <wsdl:output message="tns:SaveBillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillNumber">
+      <wsdl:input message="tns:GetBillNumberSoapIn" />
+      <wsdl:output message="tns:GetBillNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input message="tns:SendSMSSoapIn" />
+      <wsdl:output message="tns:SendSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMStoDealer">
+      <wsdl:input message="tns:SendSMStoDealerSoapIn" />
+      <wsdl:output message="tns:SendSMStoDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSMSStatusForBill">
+      <wsdl:input message="tns:UpdateSMSStatusForBillSoapIn" />
+      <wsdl:output message="tns:UpdateSMSStatusForBillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePump">
+      <wsdl:input message="tns:SavePumpSoapIn" />
+      <wsdl:output message="tns:SavePumpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePumps">
+      <wsdl:input message="tns:SavePumpsSoapIn" />
+      <wsdl:output message="tns:SavePumpsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPumpsHandledByEmployee">
+      <wsdl:input message="tns:GetPumpsHandledByEmployeeSoapIn" />
+      <wsdl:output message="tns:GetPumpsHandledByEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveShift">
+      <wsdl:input message="tns:SaveShiftSoapIn" />
+      <wsdl:output message="tns:SaveShiftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeBills">
+      <wsdl:input message="tns:GetEmployeeBillsSoapIn" />
+      <wsdl:output message="tns:GetEmployeeBillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShiftCloseAndGenerateReport">
+      <wsdl:input message="tns:UpdateShiftCloseAndGenerateReportSoapIn" />
+      <wsdl:output message="tns:UpdateShiftCloseAndGenerateReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProducts">
+      <wsdl:input message="tns:AddProductsSoapIn" />
+      <wsdl:output message="tns:AddProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBillWithCurrentCashier">
+      <wsdl:input message="tns:UpdateBillWithCurrentCashierSoapIn" />
+      <wsdl:output message="tns:UpdateBillWithCurrentCashierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCurrentCashierFromBill">
+      <wsdl:input message="tns:RemoveCurrentCashierFromBillSoapIn" />
+      <wsdl:output message="tns:RemoveCurrentCashierFromBillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input message="tns:GetAllProductsSoapIn" />
+      <wsdl:output message="tns:GetAllProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePriceForProduct">
+      <wsdl:input message="tns:UpdatePriceForProductSoapIn" />
+      <wsdl:output message="tns:UpdatePriceForProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCashReceipt">
+      <wsdl:input message="tns:SaveCashReceiptSoapIn" />
+      <wsdl:output message="tns:SaveCashReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeCashReceipts">
+      <wsdl:input message="tns:GetEmployeeCashReceiptsSoapIn" />
+      <wsdl:output message="tns:GetEmployeeCashReceiptsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesBillNumberExists">
+      <wsdl:input message="tns:DoesBillNumberExistsSoapIn" />
+      <wsdl:output message="tns:DoesBillNumberExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTankableProducts">
+      <wsdl:input message="tns:GetTankableProductsSoapIn" />
+      <wsdl:output message="tns:GetTankableProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTanksForProduct">
+      <wsdl:input message="tns:GetTanksForProductSoapIn" />
+      <wsdl:output message="tns:GetTanksForProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductReceived">
+      <wsdl:input message="tns:SaveProductReceivedSoapIn" />
+      <wsdl:output message="tns:SaveProductReceivedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTanks">
+      <wsdl:input message="tns:GetAllTanksSoapIn" />
+      <wsdl:output message="tns:GetAllTanksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousVolumeForTanks">
+      <wsdl:input message="tns:GetPreviousVolumeForTanksSoapIn" />
+      <wsdl:output message="tns:GetPreviousVolumeForTanksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesForTanks">
+      <wsdl:input message="tns:GetSalesForTanksSoapIn" />
+      <wsdl:output message="tns:GetSalesForTanksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptsForTanks">
+      <wsdl:input message="tns:GetReceiptsForTanksSoapIn" />
+      <wsdl:output message="tns:GetReceiptsForTanksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDailyDip">
+      <wsdl:input message="tns:SaveDailyDipSoapIn" />
+      <wsdl:output message="tns:SaveDailyDipSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BillingApplicationSoap" type="tns:BillingApplicationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://tempuri.org/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <soap:operation soapAction="http://tempuri.org/GetCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCashiers">
+      <soap:operation soapAction="http://tempuri.org/GetCashiers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentCashiers">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentCashiers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBill">
+      <soap:operation soapAction="http://tempuri.org/SaveBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillNumber">
+      <soap:operation soapAction="http://tempuri.org/GetBillNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://tempuri.org/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMStoDealer">
+      <soap:operation soapAction="http://tempuri.org/SendSMStoDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSMSStatusForBill">
+      <soap:operation soapAction="http://tempuri.org/UpdateSMSStatusForBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePump">
+      <soap:operation soapAction="http://tempuri.org/SavePump" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePumps">
+      <soap:operation soapAction="http://tempuri.org/SavePumps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPumpsHandledByEmployee">
+      <soap:operation soapAction="http://tempuri.org/GetPumpsHandledByEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveShift">
+      <soap:operation soapAction="http://tempuri.org/SaveShift" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeBills">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeeBills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShiftCloseAndGenerateReport">
+      <soap:operation soapAction="http://tempuri.org/UpdateShiftCloseAndGenerateReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProducts">
+      <soap:operation soapAction="http://tempuri.org/AddProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBillWithCurrentCashier">
+      <soap:operation soapAction="http://tempuri.org/UpdateBillWithCurrentCashier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCurrentCashierFromBill">
+      <soap:operation soapAction="http://tempuri.org/RemoveCurrentCashierFromBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap:operation soapAction="http://tempuri.org/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePriceForProduct">
+      <soap:operation soapAction="http://tempuri.org/UpdatePriceForProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCashReceipt">
+      <soap:operation soapAction="http://tempuri.org/SaveCashReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeCashReceipts">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeeCashReceipts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoesBillNumberExists">
+      <soap:operation soapAction="http://tempuri.org/DoesBillNumberExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTankableProducts">
+      <soap:operation soapAction="http://tempuri.org/GetTankableProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTanksForProduct">
+      <soap:operation soapAction="http://tempuri.org/GetTanksForProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductReceived">
+      <soap:operation soapAction="http://tempuri.org/SaveProductReceived" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTanks">
+      <soap:operation soapAction="http://tempuri.org/GetAllTanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousVolumeForTanks">
+      <soap:operation soapAction="http://tempuri.org/GetPreviousVolumeForTanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesForTanks">
+      <soap:operation soapAction="http://tempuri.org/GetSalesForTanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptsForTanks">
+      <soap:operation soapAction="http://tempuri.org/GetReceiptsForTanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDailyDip">
+      <soap:operation soapAction="http://tempuri.org/SaveDailyDip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BillingApplicationSoap12" type="tns:BillingApplicationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProducts">
+      <soap12:operation soapAction="http://tempuri.org/GetProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <soap12:operation soapAction="http://tempuri.org/GetCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCashiers">
+      <soap12:operation soapAction="http://tempuri.org/GetCashiers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentCashiers">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentCashiers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBill">
+      <soap12:operation soapAction="http://tempuri.org/SaveBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillNumber">
+      <soap12:operation soapAction="http://tempuri.org/GetBillNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap12:operation soapAction="http://tempuri.org/SendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMStoDealer">
+      <soap12:operation soapAction="http://tempuri.org/SendSMStoDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSMSStatusForBill">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSMSStatusForBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePump">
+      <soap12:operation soapAction="http://tempuri.org/SavePump" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePumps">
+      <soap12:operation soapAction="http://tempuri.org/SavePumps" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPumpsHandledByEmployee">
+      <soap12:operation soapAction="http://tempuri.org/GetPumpsHandledByEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveShift">
+      <soap12:operation soapAction="http://tempuri.org/SaveShift" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeBills">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeeBills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShiftCloseAndGenerateReport">
+      <soap12:operation soapAction="http://tempuri.org/UpdateShiftCloseAndGenerateReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProducts">
+      <soap12:operation soapAction="http://tempuri.org/AddProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBillWithCurrentCashier">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBillWithCurrentCashier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCurrentCashierFromBill">
+      <soap12:operation soapAction="http://tempuri.org/RemoveCurrentCashierFromBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap12:operation soapAction="http://tempuri.org/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePriceForProduct">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePriceForProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCashReceipt">
+      <soap12:operation soapAction="http://tempuri.org/SaveCashReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeCashReceipts">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeeCashReceipts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoesBillNumberExists">
+      <soap12:operation soapAction="http://tempuri.org/DoesBillNumberExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTankableProducts">
+      <soap12:operation soapAction="http://tempuri.org/GetTankableProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTanksForProduct">
+      <soap12:operation soapAction="http://tempuri.org/GetTanksForProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductReceived">
+      <soap12:operation soapAction="http://tempuri.org/SaveProductReceived" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTanks">
+      <soap12:operation soapAction="http://tempuri.org/GetAllTanks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousVolumeForTanks">
+      <soap12:operation soapAction="http://tempuri.org/GetPreviousVolumeForTanks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesForTanks">
+      <soap12:operation soapAction="http://tempuri.org/GetSalesForTanks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptsForTanks">
+      <soap12:operation soapAction="http://tempuri.org/GetReceiptsForTanks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDailyDip">
+      <soap12:operation soapAction="http://tempuri.org/SaveDailyDip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillingApplication">
+    <wsdl:port name="BillingApplicationSoap" binding="tns:BillingApplicationSoap">
+      <soap:address location="http://localhost/BillingApplication.WebService/BillingApplication.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BillingApplicationSoap12" binding="tns:BillingApplicationSoap12">
+      <soap12:address location="http://localhost/BillingApplication.WebService/BillingApplication.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

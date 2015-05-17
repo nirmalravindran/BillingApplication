@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillingApplication.Core", "BillingApplication.Core\BillingApplication.Core.csproj", "{0B2A866D-972A-4AD0-875D-F43CCA00D250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillingApplication.WebService", "BillingApplication.WebService\BillingApplication.WebService.csproj", "{56F49B51-19F3-478E-BC29-D2E23D414E4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillingApplication.WinForms", "BillingApplication.WinForms\BillingApplication.WinForms.csproj", "{06B0A976-383F-4B76-B793-331738B217E7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{56F49B51-19F3-478E-BC29-D2E23D414E4F} = {56F49B51-19F3-478E-BC29-D2E23D414E4F}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Libraries", "External Libraries", "{51DA80D6-FBBC-4A49-A798-CAE327E24DCD}"
+	ProjectSection(SolutionItems) = preProject
+		External Librarires\itextsharp.dll = External Librarires\itextsharp.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B2A866D-972A-4AD0-875D-F43CCA00D250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2A866D-972A-4AD0-875D-F43CCA00D250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2A866D-972A-4AD0-875D-F43CCA00D250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2A866D-972A-4AD0-875D-F43CCA00D250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F49B51-19F3-478E-BC29-D2E23D414E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F49B51-19F3-478E-BC29-D2E23D414E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F49B51-19F3-478E-BC29-D2E23D414E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F49B51-19F3-478E-BC29-D2E23D414E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B0A976-383F-4B76-B793-331738B217E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B0A976-383F-4B76-B793-331738B217E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B0A976-383F-4B76-B793-331738B217E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B0A976-383F-4B76-B793-331738B217E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

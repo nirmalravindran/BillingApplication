@@ -1,0 +1,60 @@
+\\BHARATH\BillingApplication\BillingApplication.WinForms\bin\Debug\BillingApplication.WinForms.exe
+\\BHARATH\BillingApplication\BillingApplication.WinForms\bin\Debug\BillingApplication.WinForms.pdb
+\\BHARATH\BillingApplication\BillingApplication.WinForms\obj\Debug\ResolveAssemblyReference.cache
+\\BHARATH\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.Form1.resources
+\\BHARATH\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.Properties.Resources.resources
+\\BHARATH\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.csproj.GenerateResource.Cache
+\\BHARATH\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.exe
+\\BHARATH\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.pdb
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\bin\Debug\BillingApplication.WinForms.exe
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\bin\Debug\BillingApplication.WinForms.pdb
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\ResolveAssemblyReference.cache
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.BillingForm.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.Properties.Resources.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.csproj.GenerateResource.Cache
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.exe
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.pdb
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\bin\Debug\BillingApplication.WinForms.exe.config
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.AddPump.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.UserControls.PumpShiftDetails.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.CloseShift.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.ShiftSummary.resources
+\\bharath\BillingApplication\BillingApplication.WinForms\bin\Debug\BillingApplication.WinForms.exe.config
+\\bharath\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.AddPump.resources
+\\bharath\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.BillingForm.resources
+\\bharath\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.CloseShift.resources
+\\bharath\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.MDIParent1.resources
+\\bharath\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.ShiftSummary.resources
+\\bharath\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.UserControls.PumpShiftDetails.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.MDIParent.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.AddProducts.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.ChangeProductPrice.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.CheckBills.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.CashReceiptForm.resources
+F:\Documents and Settings\Bharath Kumar\My Documents\Visual Studio 2008\Projects\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.CashPaid.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\bin\Debug\BillingApplication.WinForms.exe.config
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.exe
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.pdb
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\bin\Debug\BillingApplication.WinForms.exe
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\bin\Debug\BillingApplication.WinForms.pdb
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\ResolveAssemblyReference.cache
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.AddProducts.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.AddPump.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.BillingForm.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.CashPaid.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.CashReceiptForm.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.ChangeProductPrice.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.CheckBills.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.CloseShift.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.MDIParent.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.Properties.Resources.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.SampleTag.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.ShiftSummary.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.UserControls.PumpShiftDetails.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.csproj.GenerateResource.Cache
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.UserControls.ProductDetails.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.UserControls.TankDetails.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\bin\Debug\itextsharp.dll
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.DipEntry.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.UserControls.TankDip.resources
+F:\BillingApplication\BillingApplication\BillingApplication.WinForms\obj\Debug\BillingApplication.WinForms.UserControls.ProductDip.resources

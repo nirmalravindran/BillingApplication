@@ -1,0 +1,14 @@
+ private string FormatDecimalValue(string Value, int length)
+        {
+            if (!Value.Contains("."))
+                Value = Value + ".00";
+            else
+                Value = Value.PadRight(length, '0');
+            Value = Value.Substring(0, Value.IndexOf(".") + 3);
+            if (Value.Length > length)
+                Value = Value.Substring(0, length-1);
+            else
+                Value = Value.PadLeft(length);
+
+            return Value;
+        }

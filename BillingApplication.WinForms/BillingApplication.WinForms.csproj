@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{06B0A976-383F-4B76-B793-331738B217E7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BillingApplication.WinForms</RootNamespace>
+    <AssemblyName>BillingApplication.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.3.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External Librarires\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProducts.Designer.cs">
+      <DependentUpon>AddProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPump.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPump.Designer.cs">
+      <DependentUpon>AddPump.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillingForm.Designer.cs">
+      <DependentUpon>BillingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashPaid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashPaid.Designer.cs">
+      <DependentUpon>CashPaid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashReceiptForm.Designer.cs">
+      <DependentUpon>CashReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeProductPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeProductPrice.Designer.cs">
+      <DependentUpon>ChangeProductPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckBills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckBills.Designer.cs">
+      <DependentUpon>CheckBills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CloseShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CloseShift.Designer.cs">
+      <DependentUpon>CloseShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DipEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DipEntry.Designer.cs">
+      <DependentUpon>DipEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent.Designer.cs">
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintRelated.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddProducts.resx">
+      <DependentUpon>AddProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPump.resx">
+      <DependentUpon>AddPump.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillingForm.resx">
+      <DependentUpon>BillingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashPaid.resx">
+      <DependentUpon>CashPaid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashReceiptForm.resx">
+      <DependentUpon>CashReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeProductPrice.resx">
+      <DependentUpon>ChangeProductPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckBills.resx">
+      <DependentUpon>CheckBills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CloseShift.resx">
+      <DependentUpon>CloseShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DipEntry.resx">
+      <DependentUpon>DipEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParent.resx">
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SampleTag.resx">
+      <DependentUpon>SampleTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftSummary.resx">
+      <DependentUpon>ShiftSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ProductDetails.resx">
+      <DependentUpon>ProductDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ProductDip.resx">
+      <DependentUpon>ProductDip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PumpShiftDetails.resx">
+      <DependentUpon>PumpShiftDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TankDetails.resx">
+      <DependentUpon>TankDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TankDip.resx">
+      <DependentUpon>TankDip.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SampleTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleTag.Designer.cs">
+      <DependentUpon>SampleTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BillingServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftSummary.Designer.cs">
+      <DependentUpon>ShiftSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProductDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProductDetails.Designer.cs">
+      <DependentUpon>ProductDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProductDip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProductDip.Designer.cs">
+      <DependentUpon>ProductDip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PumpShiftDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PumpShiftDetails.Designer.cs">
+      <DependentUpon>PumpShiftDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TankDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TankDetails.Designer.cs">
+      <DependentUpon>TankDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TankDip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TankDip.Designer.cs">
+      <DependentUpon>TankDip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BillingServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BillingServices\BillingApplication.disco" />
+    <None Include="Service References\BillingServices\BillingApplication.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BillingServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BillingServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BillingServices\BillingApplication.WinForms.BillingServices.Bill.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServices\BillingApplication.WinForms.BillingServices.Cashier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServices\BillingApplication.WinForms.BillingServices.CashReceipt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServices\BillingApplication.WinForms.BillingServices.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServices\BillingApplication.WinForms.BillingServices.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServices\BillingApplication.WinForms.BillingServices.Pump.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServices\BillingApplication.WinForms.BillingServices.Report.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServices\BillingApplication.WinForms.BillingServices.Tank.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

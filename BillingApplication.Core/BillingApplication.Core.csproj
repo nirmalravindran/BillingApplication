@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B2A866D-972A-4AD0-875D-F43CCA00D250}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BillingApplication.Core</RootNamespace>
+    <AssemblyName>BillingApplication.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.3.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External Librarires\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ConfigSettings.cs" />
+    <Compile Include="Constants\Bill.cs" />
+    <Compile Include="Constants\Cashier.cs" />
+    <Compile Include="Constants\BillItem.cs" />
+    <Compile Include="Constants\CashReceipt.cs" />
+    <Compile Include="Constants\Customer.cs" />
+    <Compile Include="Constants\PrintRelated.cs" />
+    <Compile Include="Constants\Product.cs" />
+    <Compile Include="Constants\Pump.cs" />
+    <Compile Include="Constants\PumpShiftDetails.cs" />
+    <Compile Include="Constants\Tank.cs" />
+    <Compile Include="Constants\TankReceipts.cs" />
+    <Compile Include="DataAccess\Concrete\DataAccess.cs" />
+    <Compile Include="DomainModels\CashReceipt.cs" />
+    <Compile Include="DomainModels\Expenses.cs" />
+    <Compile Include="DomainModels\ProductReceived.cs" />
+    <Compile Include="DomainModels\Tank.cs" />
+    <Compile Include="Queries\CashReceiptQueries.cs" />
+    <Compile Include="Reporting\CreateTallyExcel.cs" />
+    <Compile Include="DataAccess\IDataAccess.cs" />
+    <Compile Include="DomainModels\BillItems.cs" />
+    <Compile Include="DomainModels\Cashier.cs" />
+    <Compile Include="DomainModels\Bill.cs" />
+    <Compile Include="DomainModels\Pump.cs" />
+    <Compile Include="DomainModels\Customer.cs" />
+    <Compile Include="DomainModels\Product.cs" />
+    <Compile Include="DomainModels\PumpShiftDetails.cs" />
+    <Compile Include="DomainModels\Report.cs" />
+    <Compile Include="Helpers\DomainModelToRowConverter.cs" />
+    <Compile Include="Helpers\RowToDomainModelConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\BillingQueries.cs" />
+    <Compile Include="Queries\PumpQueries.cs" />
+    <Compile Include="Reporting\ShiftCloseReport.cs" />
+    <Compile Include="Repositories\Concrete\PumpRepository.cs" />
+    <Compile Include="Repositories\Concrete\BillingRepository.cs" />
+    <Compile Include="Repositories\IPumpRepository.cs" />
+    <Compile Include="Repositories\IBillingRepository.cs" />
+    <Compile Include="Services\Concrete\BillingService.cs" />
+    <Compile Include="Services\IBillingService.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
